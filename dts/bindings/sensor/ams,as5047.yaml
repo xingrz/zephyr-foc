@@ -1,0 +1,37 @@
+# Copyright (c) 2023 XiNGRZ
+# SPDX-License-Identifier: MIT
+
+description: 14-Bit On-Axis Magnetic Rotary Position Sensor with 11-Bit Decimal and Binary Incremental Pulse Count
+
+compatible: "ams,as5047"
+
+include: spi-device.yaml
+
+properties:
+  label:
+    type: string
+    required: true
+
+  cs-delay-us:
+    type: int
+    required: false
+    default: 350
+    description: Delay after pulling down and before releasing CS pin.
+
+  init-delay-us:
+    type: int
+    required: false
+    default: 0
+    description: Delay before first poll.
+
+  poll-interval-us:
+    type: int
+    required: false
+    default: 10000
+    description: Delay between each poll.
+
+  precision-shift:
+    type: int
+    required: false
+    default: 0
+    description: The number of bits to shift the value read from the sensor to adjust its precision. The valid range is 0 to 14, inclusive.

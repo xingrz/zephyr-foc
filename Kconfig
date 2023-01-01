@@ -1,0 +1,11 @@
+# Copyright (c) 2023 XiNGRZ
+# SPDX-License-Identifier: MIT
+
+config FOC
+	bool "FOC for Zephyr"
+
+if FOC
+
+rsource "drivers/Kconfig"
+
+endif # FOC
